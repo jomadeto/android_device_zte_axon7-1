@@ -81,6 +81,8 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/zte/msm8996
 TARGET_KERNEL_CONFIG := lineageos_axon7_defconfig
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-9.1/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
@@ -166,6 +168,8 @@ ifeq ($(HOST_OS),linux)
 endif
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
+
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
@@ -205,6 +209,8 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+TARGET_RIL_VARIANT := caf
+TARGET_USE_OLD_MNC_FORMAT := tru
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom

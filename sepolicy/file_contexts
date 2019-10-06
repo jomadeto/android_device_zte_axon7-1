@@ -5,7 +5,6 @@
 /data/camera(/.*)?                          u:object_r:camera_socket:s0
 /data/connectivity(/.*)?                    u:object_r:cnd_core_data_file:s0
 /data/system/fingerprint(/.*)?              u:object_r:gx_fpd_data_file:s0
-/data/vendor/misc/audio(/.*)?               u:object_r:audio_vendor_data_file:s0
 
 # Devices
 /dev/goodix_fp                              u:object_r:gx_fpd_device:s0
@@ -26,4 +25,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey      u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine      u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.zte_8996    u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.zte_8996      u:object_r:hal_lineage_touch_default_exec:s0
+
+# USB
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.axon7       u:object_r:hal_usb_default_exec:s0
