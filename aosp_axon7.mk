@@ -22,14 +22,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ailsa_ii device
 $(call inherit-product, device/zte/axon7/device.mk)
 
-# Inherit some common Syberia stuff.
-$(call inherit-product, vendor/syberia/common.mk)
+# Inherit some common rr stuff.
+$(call inherit-product, vendor/aosp/common.mk)
+
+# Set gapps arch
+TARGET_GAPPS_ARCH := arm64
+
+#Set bootanimation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_BOOT_ANIMATION_RES := 1440
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := syberia_axon7
+PRODUCT_NAME := aosp_axon7
 PRODUCT_DEVICE := axon7
 PRODUCT_BRAND := ZTE
-PRODUCT_MODEL := ZTE A2017X
+PRODUCT_MODEL := ZTE A2017G
 PRODUCT_MANUFACTURER := ZTE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -39,5 +46,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT=OnePlus/OnePlus6/OnePlus6:9/PKQ1.180716.001/1905281230:user/release-keys
+
+TARGET VENDOR := zte
 
 PRODUCT_GMS_CLIENTID_BASE := android-zte
