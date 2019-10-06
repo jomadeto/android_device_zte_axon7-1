@@ -21,6 +21,17 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
+
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+int32_t property_get_int32(const char *key, int32_t default_value);
+#ifdef __cplusplus
+}
+#endif
+
 #define BTM_DEF_LOCAL_NAME   "Axon 7"
 #define BLUETOOTH_QTI_SW TRUE
 #define MAX_ACL_CONNECTIONS   16
@@ -31,5 +42,4 @@
 /* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
 #define AVDT_NUM_SEPS 12
 
-#undef PROPERTY_VALUE_MAX
 #endif
